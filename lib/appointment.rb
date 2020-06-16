@@ -1,19 +1,17 @@
 class Appointment
-  
-  def self.all 
-    @@all 
-  end   
-  
-  attr_accessor :date, :patient, :doctor 
-  
-  def initialize(name)
-    @name = name 
-  end 
-  
-  def patient
-  end 
-  
-  def doctor
-  end 
+  attr_accessor :patient, :doctor, :date
 
-end 
+  @@all = []
+
+  def initialize(date, patient, doctor)
+    @date = date
+    @patient = patient
+    @doctor = doctor
+
+    @@all << self
+  end
+
+  def self.all
+    @@all
+  end
+end
